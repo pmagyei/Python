@@ -1,4 +1,7 @@
+# Prince Agyei 14/03/2026 time: 22:48 eveinig, Location: Laidlaw Library Leeds
 
+# The program assignes a quote and the author of the quote in a variable
+# The program then prints the value assigned to each variable
 holder = "once said,"
 
 famous_person = "Ira Glass"
