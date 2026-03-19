@@ -15,8 +15,19 @@ motorcycles = ['honda', 'yamaha', 'suzuki']
 # motorcycles.append('suzuki')
 
 
-motorcycles.insert(0, 'ducati')
+# motorcycles.insert(0, 'ducati')
 
-del motorcycles[0]
-del motorcycles[-1]
-print(motorcycles)
+# del motorcycles[0]
+# del motorcycles[-1]
+# print(motorcycles)
+
+
+# print(motorcycles[3]) index out of range
+
+
+print(motorcycles[-1]) # -1 will always work no matter what, it will return the last value in a list
+
+
+motorcycles = []
+
+print(motorcycles[-1]) # will error as the are no items in the list
