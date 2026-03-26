@@ -4,7 +4,7 @@ print("I can only invite two colours for dinner")
 
 p=colours.pop(-1)
 print(f"I'm sorry {p} I can no longer invite you")
-
+#pop deletes value and makes it reusable
 p=colours.pop(-1)
 print(f"I'm sorry {p} I can no longer invite you")
 p=colours.pop(-1)
