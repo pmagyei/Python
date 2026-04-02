@@ -6,4 +6,7 @@ alien_2 = {'colour': 'red', 'points': 15}
 aliens = [alien_0, alien_1, alien_2]
 
 for alien in aliens:
-    print(alien)
+    for colour, points in alien.items():
+        print(f"The colour {alien['colour'].title()} is worth:")
+
+        print(f"{alien['points']} points")
