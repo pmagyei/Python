@@ -1,4 +1,5 @@
 # A dictionary mapping server names to their environments
+
 server_environments = {
     'web-01': 'production',
     'db-01': 'production',
@@ -16,10 +17,10 @@ incoming_alerts = [
 
 # An empty list to store the IP addresses we need to block
 blocked_ips = []
-current_env = {}
 for security_alert in incoming_alerts:
+    attacked_server = security_alert['target']
+    current_env = server_environments[attacked_server]
+    if current_env == 'production' and security_alert['severity'] == 'critical' or 'high':
+        blocked_ips.append(security_alert['source_ip'])
+        print(f"EMERGENCY: Production server: {security_alert['target']} under attack! BLOCKING IP: {server_environments['source_ip']}")
 
-    for environments in server_environments.values():
-        current_env = { security_alert['target']: environments,}
-
-print(current_env)
