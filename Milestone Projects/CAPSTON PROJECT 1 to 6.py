@@ -20,7 +20,14 @@ blocked_ips = []
 for security_alert in incoming_alerts:
     attacked_server = security_alert['target']
     current_env = server_environments[attacked_server]
-    if current_env == 'production' and security_alert['severity'] == 'critical' or 'high':
+    if current_env == 'production' and security_alert['severity'] == 'critical' or security_alert['severity'] == 'high':
         blocked_ips.append(security_alert['source_ip'])
-        print(f"EMERGENCY: Production server: {security_alert['target']} under attack! BLOCKING IP: {server_environments['source_ip']}")
+        print(f"EMERGENCY: Production server: {security_alert['target']} under attack! BLOCKING IP: {security_alert['source_ip']}")
+    elif current_env == 'staging' or current_env == 'staging':
+           print(f"Notice: Non-Production server: {security_alert['target']} is experiencing: {security_alert['severity']}")
+    else:
+        continue
 
+
+
+print(f"Final Blocked IPs: {sorted(blocked_ips)}")
