@@ -1,4 +1,3 @@
-
 server_inventory = {
     'web-front-01': 'Ubuntu_18',
     'database-01': 'CentOS_7',
@@ -14,11 +13,11 @@ os_threat_levels = {
     'Windows_2012': 'Critical'
 }
 
-vulnerable_servers = []
+servers_at_threat = []
 
+for server, os in server_inventory.items():
+    t_level = os_threat_levels[os]
+    if t_level in ['Critical', 'High']:
+        servers_at_threat.append(server)
+        print(f" WARNING: The current server: {server} is at a {t_level} threat.")
 
-for server, os in server_inventory .items():
-    threat_level = os_threat_levels[os]
-    if threat_level in ['Critical', 'High']:
-        vulnerable_servers.append(server)
-print(vulnerable_servers)
