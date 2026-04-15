@@ -15,3 +15,10 @@ os_threat_levels = {
 }
 
 vulnerable_servers = []
+
+
+for server, os in server_inventory .items():
+    threat_level = os_threat_levels[os]
+    if threat_level == 'Critical' or threat_level == 'High':
+        vulnerable_servers.append(server)
+print(vulnerable_servers)
