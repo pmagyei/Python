@@ -1,3 +1,5 @@
+from pip._internal.index import package_finder
+
 server_inventory = {
     'web-front-01': 'Ubuntu_18',
     'database-01': 'CentOS_7',
@@ -17,7 +19,8 @@ servers_at_threat = []
 
 for server, os in server_inventory.items():
     t_level = os_threat_levels[os]
-    if t_level in ['Critical', 'High']:
+    print(f"Server: {server} is running on: {os}, the threat level is: {t_level}")
+    if t_level == 'Critical' or t_level == 'High':
         servers_at_threat.append(server)
-        print(f" WARNING: The current server: {server} is at a {t_level} threat.")
 
+print(servers_at_threat)
