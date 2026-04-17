@@ -1,5 +1,3 @@
-from pip._internal.index import package_finder
-
 server_inventory = {
     'web-front-01': 'Ubuntu_18',
     'database-01': 'CentOS_7',

@@ -1,5 +1,3 @@
-from time import process_time_ns
-
 
 prompt = "\nEnter a topping for you Pizza:"
 prompt += "\ntype 'quit' when you are done\n"
