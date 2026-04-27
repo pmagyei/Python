@@ -1,4 +1,3 @@
-# A list of dictionaries representing currently running cloud servers
 active_instances = [
     {'instance_id': 'i-001abcd', 'type': 't2.micro', 'state': 'running'},
     {'instance_id': 'i-002efgh', 'type': 'm5.large', 'state': 'running'},
@@ -14,3 +13,20 @@ hourly_pricing = {
 }
 
 total_hourly_cost = 0.0
+
+servers_running = []
+for ins_info in active_instances:
+    if ins_info['state'] == 'running':
+        #print(ins_info['type'])
+        server_type = ins_info['type']
+
+        total_hourly_cost += hourly_pricing[server_type]
+print(total_hourly_cost)
+
+
+
+
+
+
+
+
