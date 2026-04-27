@@ -11,12 +11,13 @@
 #     print(list(list(content)))
 
 device_list = []
-with open('./newdir/devices.txt',) as f:
+with open('../../sample_files/devices.txt', ) as f:
     content = f.read().splitlines()
     for line in content[1:]:
         device_list.append(line.split(':'))
 print(device_list)
 
 
-for devices in device_list:
-    print(f"pinging {devices[1]}")
+
+# for devices in device_list:
+#     print(f"pinging {devices[1]}")

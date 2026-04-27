@@ -2,3 +2,4 @@ Gitignore file
 
 
 .idea
+.venv
